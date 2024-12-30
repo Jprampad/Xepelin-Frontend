@@ -243,7 +243,7 @@ function Table() {
             />
 
             {alert.show && (
-              <div className={`fixed top-4 right-4 p-4 rounded-xl shadow-lg transition-all duration-500 z-50 flex items-center gap-2 ${
+              <div className={`fixed bottom-4 right-4 p-4 rounded-xl shadow-lg transition-all duration-500 z-50 flex items-center gap-2 ${
                 alert.type === 'success' 
                   ? 'bg-green-500 text-white' 
                   : alert.type === 'error'
@@ -473,7 +473,7 @@ function Table() {
       />
 
       {alert.show && (
-        <div className={`fixed top-4 right-4 p-4 rounded-xl shadow-lg transition-all duration-500 z-50 flex items-center gap-2 ${
+        <div className={`fixed bottom-4 right-4 p-4 rounded-xl shadow-lg transition-all duration-500 z-50 flex items-center gap-2 ${
           alert.type === 'success' 
             ? 'bg-green-500 text-white' 
             : alert.type === 'error'
