@@ -131,7 +131,7 @@ function Table() {
       setRates(prevRates => prevRates.filter(rate => rate.idOp !== idOp));
       setFilteredRates(prevRates => prevRates.filter(rate => rate.idOp !== idOp));
       
-      toast('Tasa eliminada correctamente', {
+      toast('Registro eliminado correctamente', {
         position: 'bottom-right',
         style: {
           background: '#22c55e', // verde
@@ -143,7 +143,7 @@ function Table() {
       });
     } catch (error) {
       console.error('Error al eliminar:', error);
-      toast.error(error.response?.data?.detail || 'Error al eliminar la tasa', {
+      toast.error(error.response?.data?.detail || 'Error al eliminar el registro', {
         position: 'bottom-right',
         style: {
           borderRadius: '12px',
@@ -367,7 +367,7 @@ function Table() {
                           onClick={() => sortData('tasa')}
                         >
                           <div className="flex items-center gap-2">
-                            Tasa
+                            Tasa (%)
                             <span className={`transition-colors ${
                               sortConfig.key === 'tasa' ? 'text-indigo-600' : 'text-gray-400 group-hover:text-gray-600'
                             }`}>
@@ -518,7 +518,7 @@ function Table() {
         <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-lg p-6 max-w-sm w-full">
             <h3 className="text-lg font-medium text-gray-900 mb-4">
-              ¿Estás seguro de eliminar esta tasa?
+              ¿Estás seguro de eliminar este registro?
             </h3>
             <p className="text-sm text-gray-500 mb-4">
               Esta acción no se puede deshacer.
