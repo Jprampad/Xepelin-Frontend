@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Definimos la URL base
 const API_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://xepelin-backend-7tgwu6u7i-jprampads-projects.vercel.app'  // URL de producción
+  ? 'xepelin-backend-jprampad.vercel.app'  // URL de producción
   : 'http://localhost:8000';         // URL de desarrollo
 
 console.log('Environment:', process.env.NODE_ENV);
