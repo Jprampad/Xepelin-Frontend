@@ -1,10 +1,11 @@
 import axios from 'axios';
 
 // Definimos la URL base
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env?.VITE_API_URL;
+
 if (!API_URL) {
-  console.error('VITE_API_URL no está definida en las variables de entorno');
-  throw new Error('VITE_API_URL es requerida');
+  console.warn('API URL no encontrada:', import.meta.env); // Para debugging
+  throw new Error('VITE_API_URL es requerida. Verifica tus archivos .env');
 }
 
 console.log('Environment:', import.meta.env.MODE);
