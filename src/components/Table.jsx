@@ -131,10 +131,25 @@ function Table() {
       setRates(prevRates => prevRates.filter(rate => rate.idOp !== idOp));
       setFilteredRates(prevRates => prevRates.filter(rate => rate.idOp !== idOp));
       
-      toast.success('Tasa eliminada correctamente');
+      toast('Tasa eliminada correctamente', {
+        position: 'bottom-right',
+        style: {
+          background: '#22c55e', // verde
+          color: '#fff',
+          padding: '16px',
+          borderRadius: '12px',
+        },
+        icon: '✓',
+      });
     } catch (error) {
       console.error('Error al eliminar:', error);
-      toast.error(error.response?.data?.detail || 'Error al eliminar la tasa');
+      toast.error(error.response?.data?.detail || 'Error al eliminar la tasa', {
+        position: 'bottom-right',
+        style: {
+          borderRadius: '12px',
+          padding: '16px',
+        },
+      });
     } finally {
       setIsDeleting(false);
       setShowDeleteConfirm(false);
