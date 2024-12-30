@@ -1,17 +1,14 @@
 import axios from 'axios';
 
 // Definimos la URL base
-const API_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://xepelin-backend-7tgwu6u7i-jprampads-projects.vercel.app'  // URL de producción
-  : 'http://localhost:8000';         // URL de desarrollo
-
-console.log('Environment:', process.env.NODE_ENV);
-console.log('API URL:', API_URL);
-
-// Si no hay URL de API, muestra un error más descriptivo
+const API_URL = import.meta.env.VITE_API_URL;
 if (!API_URL) {
   console.error('VITE_API_URL no está definida en las variables de entorno');
+  throw new Error('VITE_API_URL es requerida');
 }
+
+console.log('Environment:', import.meta.env.MODE);
+console.log('API URL:', API_URL);
 
 // Instancia específica para login sin interceptor
 const authApi = axios.create({
