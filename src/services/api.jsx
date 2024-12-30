@@ -1,7 +1,12 @@
 import axios from 'axios';
 
 // Definimos la URL base
-const API_URL = import.meta.env?.VITE_API_URL;
+const API_URL = process.env.NODE_ENV === 'production' 
+  ? 'https://xepelin-backend-7tgwu6u7i-jprampads-projects.vercel.app'  // URL de producción
+  : 'http://localhost:8000';         // URL de desarrollo
+
+console.log('Environment:', process.env.NODE_ENV);
+console.log('API URL:', API_URL);
 
 if (!API_URL) {
   console.warn('API URL no encontrada:', import.meta.env); // Para debugging
