@@ -8,13 +8,10 @@ const API_URL = process.env.NODE_ENV === 'production'
 console.log('Environment:', process.env.NODE_ENV);
 console.log('API URL:', API_URL);
 
+// Si no hay URL de API, muestra un error más descriptivo
 if (!API_URL) {
-  console.warn('API URL no encontrada:', import.meta.env); // Para debugging
-  throw new Error('VITE_API_URL es requerida. Verifica tus archivos .env');
+  console.error('VITE_API_URL no está definida en las variables de entorno');
 }
-
-console.log('Environment:', import.meta.env.MODE);
-console.log('API URL:', API_URL);
 
 // Instancia específica para login sin interceptor
 const authApi = axios.create({
